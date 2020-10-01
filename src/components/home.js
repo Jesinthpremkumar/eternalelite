@@ -4,9 +4,12 @@ import Wedding from "../assets/Wedding.svg";
 import Parties from "../assets/Parties.svg";
 import Birthday from "../assets/Birthday.svg";
 import Corporate from "../assets/Corporate.svg";
+import Image from "./subComponents/images";
+import Footer from "./footer";
 import {makeStyles} from '@material-ui/core/styles';
+import {withRouter} from 'react-router-dom';
 import { Box, Grid ,Typography,Button, SvgIcon} from "@material-ui/core";
-export default function Home(){
+function Home(){
     const imageStyle={
         height:"950px",
         width:"890px"
@@ -43,7 +46,7 @@ export default function Home(){
             <Grid direction="column" justify="center" container  >
             <Box>
                 <Box  textAlign="center"  spacing={0}  mt={0}>
-                <Typography className={style.right}   variant="h4" style={{height:"auto",fontWeight:"bold", color:"#8A0000",align:"center" }} noWrap>
+                <Typography className={style.right}   variant="h4" style={{height:"auto",fontWeight:"bold", color:"#8A0000",align:"center" }} >
                 Make your big day memorable 
                 
             </Typography>
@@ -70,7 +73,7 @@ export default function Home(){
                 
            
                 <Box style={{backgroundColor:"#EEC9D2",borderRadius:"25px"}} mt={8} pb={5} width={"100%"}> 
-                    <Grid container spacing={1} direction="row" justify="center" >
+                    <Grid container  direction="row" justify="center" >
                             <Box display="flex" textAlign="center" flexDirection="row" height="100%" width="100%" >
                              <Box ml={5} m={3} color="#8A0000" fontWeight="bold" height="100%" width="20%" style={imgBg}>
                                  <figure >
@@ -108,8 +111,9 @@ export default function Home(){
             </Box>
                        </Grid> 
                 </Box>
-            
+            <Footer />
  </React.Fragment>           
       
     );
 }
+export default withRouter(Home);
